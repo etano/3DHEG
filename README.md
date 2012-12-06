@@ -29,9 +29,9 @@ Possible observables:
 
 If you find this data useful in your research, please cite the original reference:
 
-  E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley
-  [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://arxiv.org/abs/1211.6130)
-  arXiv:1211:6130
+  E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley  
+  [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://arxiv.org/abs/1211.6130)  
+  arXiv:1211:6130  
 
 Bibtex:
 
