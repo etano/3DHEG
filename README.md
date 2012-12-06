@@ -18,20 +18,20 @@ To access the data, I have provided a simple python script (GetData.py) which gr
 `python GetData.py polarization r_{s} T/T_{F} Observable`
 
 Possible observables:
-* E
-* K
-* V
-* U
-* Ec
-* PairCorrelation
-* StructureFactor
-* Sign
+* e (Total energy)
+* k (Kinetic energy)
+* v (Bare coulomb energy)
+* u ("Potential" energy, dU/d\Beta)
+* ec (Correlation energy)
+* pc (Pair correlation function)
+* sf (Structure factor)
+* sgn (Average value of the sign)
 
 If you find this data useful in your research, please cite the original reference:
 
-    E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley
-    [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://arxiv.org/abs/1211.6130)
-    arXiv:1211:6130
+  E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley
+  [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://arxiv.org/abs/1211.6130)
+  arXiv:1211:6130
 
 Bibtex:
 
