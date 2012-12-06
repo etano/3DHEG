@@ -3,7 +3,7 @@
 
 Energies, pair correlation functions, and structure factors for the 3-dimensional homogeneous electron gas (3DHEG)
 
-USE
+Use
 ---
 
 The directory structure is as follows:
@@ -26,3 +26,26 @@ Possible observables:
 * PairCorrelation
 * StructureFactor
 * Sign
+
+If you find this data useful in your research, please cite the original reference:
+
+    E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley
+    [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://arxiv.org/abs/1211.6130)
+    arXiv:1211:6130
+
+Bibtex:
+
+    @ARTICLE{2012arXiv1211.6130B,
+       author = {{Brown}, E.~W. and {Clark}, B.~K. and {DuBois}, J.~L. and {Ceperley}, D.~M.},
+        title = "{Path Integral Monte Carlo Simulation of the Warm-Dense Homogeneous Electron Gas}",
+      journal = {ArXiv e-prints},
+    archivePrefix = "arXiv",
+       eprint = {1211.6130},
+     primaryClass = "cond-mat.str-el",
+     keywords = {Condensed Matter - Strongly Correlated Electrons, Condensed Matter - Other Condensed Matter},
+         year = 2012,
+        month = nov,
+       adsurl = {http://adsabs.harvard.edu/abs/2012arXiv1211.6130B},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    }
+
