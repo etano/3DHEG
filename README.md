@@ -9,13 +9,13 @@ USE
 The directory structure is as follows:
 
 * polarization
-  * rs
-    * T/TF
-      * exact (for specific points)
+    * r_{s}
+        * T/T_{F}
+            * exact (for specific points)
 
 To access the data, I have provided a simple python script (GetData.py) which grabs data from the files and outputs it to the screen. Its arguments are:
 
-'python GetData.py polarization r_{s} T/T_{F} Observable'
+`python GetData.py polarization r_{s} T/T_{F} Observable`
 
 Possible observables:
 * E
