@@ -4,15 +4,15 @@
 Energies, pair correlation functions, and structure factors for the 3-dimensional homogeneous electron gas (3DHEG)
 
 USE
-===
+---
 
 The directory structure is as follows:
 
--> polarization
---> r_{s}
----> T/T_{F}
+* polarization
+  * r_{s}
+    * T/T_{F}
 (for specific points)
-----> exact
+      * exact
 
 To access the data, I have provided a simple python script (GetData.py) which grabs data from the files and outputs it to the screen.
 Its arguments are:
