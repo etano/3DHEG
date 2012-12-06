@@ -11,20 +11,18 @@ The directory structure is as follows:
 * polarization
   * r_{s}
     * T/T_{F}
-(for specific points)
-      * exact
+      * exact (for specific points)
 
-To access the data, I have provided a simple python script (GetData.py) which grabs data from the files and outputs it to the screen.
-Its arguments are:
+To access the data, I have provided a simple python script (GetData.py) which grabs data from the files and outputs it to the screen. Its arguments are:
 
 python GetData.py polarization r_{s} T/T_{F} Observable
 
 Possible observables:
-  E
-  K
-  V
-  U
-  Ec
-  PairCorrelation
-  StructureFactor
-  Sign
+* E
+* K
+* V
+* U
+* Ec
+* PairCorrelation
+* StructureFactor
+* Sign
