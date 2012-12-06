@@ -15,9 +15,15 @@ The directory structure is as follows:
 
 To access the data, I have provided a simple python script (GetData.py) which grabs data from the files and outputs it to the screen. Its arguments are:
 
-`python GetData.py polarization r_{s} T/T_{F} Observable`
+`python GetData.py polarization r_{s} T/T_{F} Observable (exact)`
 
-Possible observables:
+Possible polarizations: 0, 1
+
+Possible r_{s}: 1.0, 2.0, 4.0, 6.0, 8.0, 10.0, 40.0
+
+Possible T/T_{F}: 0.0625, 0.125, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0
+
+Possible observables (note all energies given in Rydbergs):
 * e (Total energy)
 * k (Kinetic energy)
 * v (Bare coulomb energy)
@@ -25,7 +31,10 @@ Possible observables:
 * ec (Correlation energy)
 * pc (Pair correlation function)
 * sf (Structure factor)
-* sgn (Average value of the sign)
+* sgn (Average value of the sign, only for exact = 1)
+
+The optional exact flag (1 - true, 0 - false (default)) will output signful calculations where possible.
+
 
 If you find this data useful in your research, please cite the original reference:
 
