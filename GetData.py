@@ -1,7 +1,7 @@
 import sys
 import os
 
-def PrintData(pol,rs,ToTF,Observable,exact):
+def PrintData(pol,rs,ToTF,Observable,channel,exact):
   if pol:
     polStr = 'pol'
   else:
@@ -19,13 +19,93 @@ def PrintData(pol,rs,ToTF,Observable,exact):
       dx = float(data[EnergyStrs.index(Observable)].split()[-1])
       print x,dx
     elif Observable == 'pc':
-      f = open(dirname+'PairCorrelation.dat')
-      for line in f:
-        print line,
+      if not pol:
+        guu,gud,dguu,dgud = {},{},{},{}
+        if channel == 0:
+          f = open(dirname+'PairCorrelation_0.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            guu[x] = y/2.
+            dguu[x] = dy/2.
+          f = open(dirname+'PairCorrelation_2.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            guu[x] += y/2.
+            dguu[x] += dy/2.
+          f = open(dirname+'PairCorrelation_1.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            gud[x] = y
+            dgud[x] = dy
+          for x in sorted(gud.iterkeys()):
+            print x,0.5*(gud[x]+guu[x]),0.5*(dgud[x]+dguu[x])
+        elif channel == 1:
+          f = open(dirname+'PairCorrelation_0.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            guu[x] = y/2.
+            dguu[x] = dy/2.
+          f = open(dirname+'PairCorrelation_2.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            guu[x] += y/2.
+            dguu[x] += dy/2.
+          for x in sorted(guu.iterkeys()):
+            print x,guu[x],dguu[x]
+        elif channel == 2:
+          f = open(dirname+'PairCorrelation_1.dat')
+          for line in f:
+            print line,
+        else:
+          print 'Error with spin channel'
+      else:
+        f = open(dirname+'PairCorrelation.dat')
+        for line in f:
+          print line,
     elif Observable == 'sf':
-      f = open(dirname+'StructureFactor.dat')
-      for line in f:
-        print line,
+      if not pol:
+        suu,sud,dsuu,dsud = {},{},{},{}
+        if channel == 0:
+          f = open(dirname+'StructureFactor_0.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            suu[x] = y/2.
+            dsuu[x] = dy/2.
+          f = open(dirname+'StructureFactor_2.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            suu[x] += y/2.
+            dsuu[x] += dy/2.
+          f = open(dirname+'StructureFactor_1.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            sud[x] = y
+            dsud[x] = dy
+          for x in sorted(sud.iterkeys()):
+            print x,sud[x]+suu[x],dsud[x]+dsuu[x]
+        elif channel == 1:
+          f = open(dirname+'StructureFactor_0.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            suu[x] = y/2.
+            dsuu[x] = dy/2.
+          f = open(dirname+'StructureFactor_2.dat')
+          for line in f:
+            [x,y,dy] = map(float,line.split())
+            suu[x] += y/2.
+            dsuu[x] += dy/2.
+          for x in sorted(suu.iterkeys()):
+            print x,suu[x],dsuu[x]
+        elif channel == 2:
+          f = open(dirname+'StructureFactor_1.dat')
+          for line in f:
+            print line,
+        else:
+          print 'Error with spin channel'
+      else:
+        f = open(dirname+'StructureFactor.dat')
+        for line in f:
+          print line,
     elif Observable == 'sgn':
       if exact:
         f = open(dirname+'Sign.dat')
@@ -35,11 +115,10 @@ def PrintData(pol,rs,ToTF,Observable,exact):
     else:
       print 'ERROR: Unrecognized Observable!'
   except:
-    print 'ERROR: Data does not exist!'
-
+    print 'ERROR: Data does not exist in '+dirname+' !'
 
 def usage():
-  print "Usage:  %s pol rs T/TF Observables (exact)" % os.path.basename(sys.argv[0])
+  print "Usage:  %s pol rs T/TF Observables (spin channel) (exact)" % os.path.basename(sys.argv[0])
   print 'Possible polarizations: 0, 1'
   print 'Possible r_{s}: 1.0, 2.0, 4.0, 6.0, 8.0, 10.0, 40.0'
   print 'Possible T/T_{F}: 0.0625, 0.125, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0'
@@ -52,6 +131,7 @@ def usage():
   print '* pc (Pair correlation function)'
   print '* sf (Structure factor)'
   print '* sgn (Average value of the sign)'
+  print 'Possible spin channels: 0 (total, default), 1 (up-up or down-down), 2 (up-down)'
   print 'The optional exact flag (1 - true, 0 - false (default)) will output signful calculations where possible.'
   sys.exit(2)
 
@@ -70,11 +150,16 @@ def main(argv=None):
     usage()
 
   try:
-    exact = int(sys.argv[5])
+    channel = int(sys.argv[5])
+  except:
+    channel = 0
+
+  try:
+    exact = int(sys.argv[6])
   except:
     exact = 0
 
-  PrintData(pol,rs,ToTF,Observable,exact)
+  PrintData(pol,rs,ToTF,Observable,channel,exact)
 
 if __name__ == "__main__":
   sys.exit(main())

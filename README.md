@@ -1,10 +1,10 @@
-3DHEG
-=====
+# 3DHEG
 
 Energies, pair correlation functions, and structure factors for the 3-dimensional homogeneous electron gas (3DHEG)
 
-Use
----
+## Use
+
+### Directory structure
 
 The directory structure is as follows:
 
@@ -13,9 +13,15 @@ The directory structure is as follows:
         * T/T_{F}
             * exact (for specific points)
 
-To access the data, I have provided a simple python script (GetData.py) which grabs data from the files and outputs it to the screen. Its arguments are:
+### Retrieving data
 
-`python GetData.py polarization r_{s} T/T_{F} Observable (exact)`
+To access the data, I have provided a simple python script (GetData.py) which grabs data from the files and outputs it to the screen.
+
+#### Inputs
+
+Its arguments are:
+
+`python GetData.py polarization r_{s} T/T_{F} Observable (spin channel) (exact)`
 
 Possible polarizations: 0, 1
 
@@ -33,8 +39,17 @@ Possible observables (note all energies given in Rydbergs):
 * sf (Structure factor)
 * sgn (Average value of the sign, only for exact = 1)
 
+Possible spin channels: 0 (total, default), 1 (up-up or down-down), 2 (up-down)
+
 The optional exact flag (1 - true, 0 - false (default)) will output signful calculations where possible.
 
+#### Outputs
+
+All data is given in the following format:
+
+`x f(x) err(f(x))`
+
+### Citation
 
 If you find this data useful in your research, please cite the original reference:
 
