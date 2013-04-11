@@ -54,22 +54,24 @@ All data is given in the following format:
 If you find this data useful in your research, please cite the original reference:
 
   E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley  
-  [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://arxiv.org/abs/1211.6130)  
-  arXiv:1211:6130  
+  [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://prl.aps.org/abstract/PRL/v110/i14/e146405)  
+  Phys. Rev. Lett. 110, 146405 (2013)
 
 Bibtex:
 
-    @ARTICLE{2012arXiv1211.6130B,
-       author = {{Brown}, E.~W. and {Clark}, B.~K. and {DuBois}, J.~L. and {Ceperley}, D.~M.},
-        title = "{Path Integral Monte Carlo Simulation of the Warm-Dense Homogeneous Electron Gas}",
-      journal = {ArXiv e-prints},
-    archivePrefix = "arXiv",
-       eprint = {1211.6130},
-     primaryClass = "cond-mat.str-el",
-     keywords = {Condensed Matter - Strongly Correlated Electrons, Condensed Matter - Other Condensed Matter},
-         year = 2012,
-        month = nov,
-       adsurl = {http://adsabs.harvard.edu/abs/2012arXiv1211.6130B},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    @article{PhysRevLett.110.146405,
+      title = {Path-Integral Monte~Carlo Simulation of the Warm Dense Homogeneous Electron Gas},
+      author = {Brown, Ethan W. and Clark, Bryan K. and DuBois, Jonathan L. and Ceperley, David M.},
+      journal = {Phys. Rev. Lett.},
+      volume = {110},
+      issue = {14},
+      pages = {146405},
+      numpages = {5},
+      year = {2013},
+      month = {Apr},
+      doi = {10.1103/PhysRevLett.110.146405},
+      url = {http://link.aps.org/doi/10.1103/PhysRevLett.110.146405},
+      eprint = {1211.6130},
+      publisher = {American Physical Society}
     }
 
