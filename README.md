@@ -56,6 +56,10 @@ If you find this data useful in your research, please cite the original referenc
   E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley  
   [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://prl.aps.org/abstract/PRL/v110/i14/e146405)  
   Phys. Rev. Lett. 110, 146405 (2013)
+  
+Also please cite this repository:
+
+[![DOI](https://zenodo.org/badge/7803/etano/3DHEG.svg)](http://dx.doi.org/10.5281/zenodo.13241)
 
 Bibtex:
 
